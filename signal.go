@@ -71,6 +71,8 @@ func (r *RandSignal) Next() (out int64, err error) {
 	if r.Max-r.Min <= (1<<63)-1 {
 		z := r.r.Int63n(r.Max - r.Min)
 		out = z + r.Min
+		// comment the previous two lines and uncomment
+		//		out = r.r.Int63n(r.Max-r.Min) + r.Min
 	} else {
 		out = int64(r.r.Uint32()<<32 | r.r.Uint32())
 		for out < r.Min || out > r.Max {

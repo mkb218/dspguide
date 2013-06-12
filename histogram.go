@@ -32,16 +32,16 @@ func Histogram(signal Signal, options HistogramOptions) (out []int64, offset int
 	return
 }
 
-func HistoMean(signal Signal, options HistogramOptions) (mean int64, err error) {
-	h, offset, e := Histogram(signal, options)
-	if e != nil {
-		return 0, e
-	}
-	var scount int64
-	var summation int64
-	for i, r := range h {
-		summation += (int64(i) + offset) * r
-		scount += r
-	}
+// func HistoMean(signal Signal, options HistogramOptions) (mean int64, err error) {
+// 	h, offset, e := Histogram(signal, options)
+// 	if e != nil {
+// 		return 0, e
+// 	}
+// 	var scount int64
+// 	var summation int64
+// 	for i, r := range h {
+// 		summation += (int64(i) + offset) * r
+// 		scount += r
+// 	}
 
-}
+// }
